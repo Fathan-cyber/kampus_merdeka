@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Calculator</title>
+ <style type="text/css">
+  .tombol{
+   background-color: deepskyblue;
+  }
+  .tabel{
+   background-color: gold;
+   margin: 10px;
+   padding: 10px;
+  }
+ </style>
+</head>
+<body>
+ <form id="formulir" name="calculator">
+  
+  <table class="tabel">
+   <caption>Calculator</caption>
+   <tr>
+    <td>Angka 1</td><td>:</td><td><input type="number" name="a1"></td>
+   </tr>
+   <tr>
+    <td>Angka 2</td><td>:</td><td><input type="number" name="a2"></td>
+   </tr>
+   <tr>
+    <td>Hasil</td><td>:</td><td><input type="number" name="hasil" disabled></td>
+   </tr>
+   <tr>
+    <td colspan="3" align="center">
+     <input class="tombol" type="button" onclick="tambah()" value="  +  ">
+     <input class="tombol" type="button" onclick="kurang()" value="  -  ">
+     <input class="tombol" type="button" onclick="kali()" value="  *  ">
+     <input class="tombol" type="button" onclick="bagi()" value="  /  ">
+     <input class="tombol" type="button" onclick="pangkat()" value="  ^  ">
+     <input class="tombol" type="button" onclick="batal()" value="Batal">
+    </td>
+   </tr>
+  </table>
+ </form>
+
+</body>
+</html>
+<script type="text/javascript">
+function tambah(){
+ let a1=parseFloat(document.calculator.a1.value);
+ let a2=parseFloat(document.calculator.a2.value);
+ let hasil= a1+a2;
+ document.calculator.hasil.value=hasil;
+}
+function kurang(){
+ let a1=parseFloat(document.calculator.a1.value);
+ let a2=parseFloat(document.calculator.a2.value);
+ let hasil= a1-a2;
+ document.calculator.hasil.value=hasil;
+}
+function kali(){
+ let a1=parseFloat(document.calculator.a1.value);
+ let a2=parseFloat(document.calculator.a2.value);
+ let hasil= a1*a2;
+ document.calculator.hasil.value=hasil;
+}
+function bagi(){
+ let a1=parseFloat(document.calculator.a1.value);
+ let a2=parseFloat(document.calculator.a2.value);
+ let hasil= a1/a2;
+ document.calculator.hasil.value=hasil;
+}
+function pangkat(){
+ let a1=parseFloat(document.calculator.a1.value);
+ let a2=parseFloat(document.calculator.a2.value);
+ let hasil= Math.pow(a1, a2);
+ document.calculator.hasil.value=hasil;
+}
+
+function batal(){
+    let frm = document.getElementById("formulir");
+    frm.a1.value = "";
+    frm.a2.value = "";
+    frm.hasil.value = "";
+}
+</script>
