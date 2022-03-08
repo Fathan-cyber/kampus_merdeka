@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gempa</title>
+  </head>
+  <body>
+    <script>
+      let hasil;
+      class Gempa {
+        constructor(lokasi, skala) {
+          this.lokasi = lokasi;
+          this.skala = skala;
+        }
+        cetakDampak() {
+          if (this.skala > 0 && this.skala < 2) {
+            hasil = "Tidak Terasa";
+          } else if (this.skala >= 2 && this.skala <= 4) {
+            hasil = "Bangunan retak - retak";
+          } else if (this.skala >= 4 && this.skala <= 6) {
+            hasil = "Bangunan Roboh";
+          } else if (this.skala > 6) {
+            hasil = "Bangunan Roboh & Berpotensi Tsunami";
+          } else {
+            hasil = "Bilangan yang anda masukkan salah";
+          }
+          document.write(`
+                Lokasi : ${this.lokasi}<br/>
+                Skala : ${this.skala}<br/>
+                Hasil : ${hasil}
+                <hr/>
+            `);
+        }
+      }
+      let isr = new Gempa("Israel", 2);
+      let amr = new Gempa("Amerika", 4);
+      let grn = new Gempa("German", 6);
+      let som = new Gempa("Somalia", 6);
+      let knh = new Gempa("Konoha", 5);
+      let bel = new Gempa("Belanda", 8);
+      let jep = new Gempa("Jepang", 7);
+      let afr = new Gempa("Afrika", 1);
+      let tle = new Gempa("Timur Leste", 3);
+      let tha = new Gempa("Thailand", 4);
+
+      isr.cetakDampak();
+      amr.cetakDampak();
+      grn.cetakDampak();
+      som.cetakDampak();
+      knh.cetakDampak();
+      bel.cetakDampak();
+      jep.cetakDampak();
+      afr.cetakDampak();
+      tle.cetakDampak();
+      tha.cetakDampak();
+    </script>
+  </body>
+</html>
